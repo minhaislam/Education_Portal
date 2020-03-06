@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="CSS/home.css">
+</head>
+<body>
+	<div>
+		<h1>Welcome Home! <%= user.username%></h1> 		
+	</div>
+
+	<a href="/logout"> logout</a><br>
+
+
+	Name:<%= user.username %>    <br>
+	Id: <%= user.id %> <br>
+	Password: <%= user.password %><br>
+	Password: <%= user.type %><br>
+	<a href="/home1/profile/<%= user.id %>"> Edit Profile</a>
+</body>
+</html>

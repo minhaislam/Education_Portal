@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<div>
+		<h1>User List</h1> 		
+	</div>
+
+	<a href="/home"> Back</a> |
+	<a href="/logout"> logout</a><br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Full Name</td>
+			<td>Username</td>
+			<td>Password</td>
+			<td>Type</td>
+			<td>Action</td>
+		</tr>
+		<% for(var i=0; i < userlist.length; i++){ %>
+		<tr>
+			<td><%= userlist[i].id %></td>
+			<td><%= userlist[i].FullName %></td>
+			<td><%= userlist[i].username %></td>
+			<td><%= userlist[i].password %></td>
+			<td><%= userlist[i].type %></td>
+			<td>
+				<a href="/home/edit/<%= userlist[i].id %>">EDIT</a> | 
+				<a href="/home/delete/<%= userlist[i].id %>">DELETE</a>  
+			</td>
+		</tr>
+		<% } %>
+	</table>
+	<table>
+		<form method="post">
+		<tr> 
+			<td>
+			Employee Name: <input type="text" name="fullname" > <br>
+			</td>
+		</tr>
+		<tr>
+			<td>	
+			Userame: <input type="text" name="uname" > <br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Password: <input type="password" name="password" ><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Type: <input type="text" name="type" ><br>
+ 			</td>
+ 		</tr>
+ 		 	<td>
+			<input type="submit" name="submit" value="register" >
+			</td>
+		</form>
+	</table>
+</body>
+</html>
