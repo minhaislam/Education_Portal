@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2020 at 10:36 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- Generation Time: Mar 06, 2020 at 12:23 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,40 +19,40 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ocr`
+-- Database: `swp`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `admin` (
   `id` int(5) NOT NULL,
-  `FullName` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `userid` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `user` (`id`, `FullName`, `username`, `password`, `type`) VALUES
-(4, 'Minhajul Islam', 'minhaj', '123456', 'admin'),
-(5, 'Tahmid Mahtab', 'Ratul', '123456', 'member'),
-(6, 'Habibul Amin', 'habib', '123456', 'member');
+INSERT INTO `admin` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
+(1, 'MD.Minhajul Islam', 'A34048', '123456', 'admin'),
+(3, 'Habibul Amin', 'A34044', '123456', 'admin'),
+(4, 'Tahmid Mahtab', 'A33980', '123456', 'admin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `admin`
 --
-ALTER TABLE `user`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -58,10 +60,12 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `admin`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
