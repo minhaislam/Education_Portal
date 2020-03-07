@@ -10,6 +10,8 @@ router.get('*', function(req, res, next){
 	}
 });
 
+
+
 router.get('/', function(req, res){	
 	if(req.cookies['userid'] != null){
 		userModel.getByUname(req.cookies['userid'], function(result){
@@ -47,6 +49,14 @@ router.get('/student', function(req, res){
 		}
 	});
 })
+
+router.get('/profile1/:id', function(req, res){
+	//console.log('profile Page!');
+	//res.render('AdminHome/profile1');
+	userModel.getById(req.params.id, function(result){
+		res.render('AdminHome/profile1', {user: result});
+	});
+});
 
 //admin:
 router.get('/edit/:id', function(req, res){
@@ -185,6 +195,8 @@ router.post('/delete2/:id', function(req, res){
 		}
 	});
 })
+
+
 
 
 //Insert:
