@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>Edit page</title>
@@ -20,20 +20,20 @@
           </div>
           
           <div class="form-wrapper">
-            Full Name:<input type="text" name="fullname" value="<%=user.fullname%>" placeholder="Full Name" class="form-control">
+            Full Name:<input type="text" name="fullname" value="<%=user.fullname%>" class="form-control">
             <i class="zmdi zmdi-account"></i>
           </div>
           <div class="form-wrapper">
-            User ID:<input type="text" name="userid" name="userid" placeholder="User ID" class="form-control">
+            User ID:<input type="text" name="userid"  value="<%=user.userid%>" class="form-control">
             <i class="zmdi zmdi-id"></i>
           </div>
          
           <div class="form-wrapper">
-           Password: <input type="password" name="password" value="<%=user.password%>" placeholder="Password" class="form-control">
+           Password: <input type="password" name="password" value="<%=user.password%>"  class="form-control">
             <i class="zmdi zmdi-lock"></i>
           </div>
           <div class="form-wrapper">
-           Type: <input type="text" name="type" value="<%=user.type%>" placeholder="Type" class="form-control">
+           Type: <input type="text" name="type" value="<%=user.type%>" class="form-control">
             <i class="zmdi zmdi-type"></i>
           </div>
           <button>Update
