@@ -5,9 +5,9 @@
 	<title>Admin Home</title>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="CSS/dist/css/adminx.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../CSS/dist/css/adminx.css" media="screen" />
 	
-	<link rel="stylesheet" type="text/css" href="CSS/AdminHome.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/AdminHome.css">
 </head>
 <body>
 	<!--<div>
@@ -39,8 +39,9 @@
                 <i data-feather="search"></i>
               </div>
             </div>
-            <input type="text" class="form-control" id="search" placeholder="Type to search...">
+            <input type="text" class="form-control" id="search" onkeyup="search(this.value)" placeholder="Type to search...">
           </div>
+          <div id="result"> </div>
         </form>
 
         <div class="d-flex flex-1 d-block d-md-none">
@@ -87,11 +88,11 @@
               <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" class="d-inline-block align-top" alt="">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="Profile.html">My Profile</a>
-              <a class="dropdown-item" href="#">My Tasks</a>
+              <a class="dropdown-item" href="/AdminHome/profile">My Profile</a>
+             
              
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" href="Home.html">Sign out</a>
+              <a class="dropdown-item text-danger" href="/logout">Sign out</a>
             </div>
           </li>
         </ul>
@@ -131,7 +132,7 @@
 
             <ul class="sidebar-sub-nav collapse" id="example">
               <li class="sidebar-nav-item">
-                <a href="Student.html" class="sidebar-nav-link">
+                <a href="/AdminHome/student" class="sidebar-nav-link">
                   <span class="sidebar-nav-abbr">
                     S
                   </span>
@@ -142,7 +143,7 @@
               </li>
 
               <li class="sidebar-nav-item">
-                <a href="Teachers.html" class="sidebar-nav-link">
+                <a href="/AdminHome/teacher" class="sidebar-nav-link">
                   <span class="sidebar-nav-abbr">
                     T
                   </span>
@@ -151,16 +152,7 @@
                   </span>
                 </a>
               </li>
-              <li class="sidebar-nav-item">
-                <a href="Official.html" class="sidebar-nav-link">
-                  <span class="sidebar-nav-abbr">
-                    O
-                  </span>
-                  <span class="sidebar-nav-name">
-                    Officials
-                  </span>
-                </a>
-              </li>
+             
               <li class="sidebar-nav-item">
                 <a href="/AdminHome/admin" class="sidebar-nav-link">
                   <span class="sidebar-nav-abbr">
@@ -216,7 +208,7 @@
           </li>
 
           <li class="sidebar-nav-item">
-             <a href="Home.html" class="sidebar-nav-link">
+             <a href="/logout" class="sidebar-nav-link">
               <span class="sidebar-nav-icon">
                
               </span>
@@ -278,19 +270,6 @@
                 </div>
               </div>
 
-              <div class="col-md-6 col-lg-3 d-flex">
-                <div class="card border-0 bg-success text-white text-center mb-grid w-100">
-                  <div class="d-flex flex-row align-items-center h-100">
-                  
-                    <div class="card-body">
-                      <div class="card-info-title">Total Officials</div>
-                      <h3 class="card-title mb-0">
-                        20
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <div class="col-md-6 col-lg-3 d-flex">
                 <div class="card border-0 bg-success text-white text-center mb-grid w-100">
@@ -313,9 +292,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
-    <script src="CSS/dist/js/vendor.js"></script>
-    <script src="CSS/dist/js/adminx.js"></script>
-
+    <script src="../CSS/dist/js/vendor.js"></script>
+    <script src="../CSS/dist/js/adminx.js"></script>
+    <script src="../CSS/dist/js/adminx.js"></script>
+	<script src="../controllers/jquery.js"></script>
+	<script src="../controllers/search.js"></script>
     <!-- If you prefer vanilla JS these are the only required scripts -->
     <!-- script src="./dist/js/vendor.js"></script>
     <script src="./dist/js/adminx.vanilla.js"></script-->

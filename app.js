@@ -10,6 +10,9 @@ var logout 			= require('./controllers/logout');
 var home1 			= require('./controllers/home1');
 var AdminHome 		= require('./controllers/AdminHome');
 var insert 		= require('./controllers/insert');
+var insert1 		= require('./controllers/insert1');
+var insert2 		= require('./controllers/insert2');
+
 
 var app = express();
 
@@ -29,7 +32,8 @@ app.use('/logout', logout);
 app.use('/home1', home1);
 app.use('/AdminHome', AdminHome);
 app.use('/AdminHome', insert);
-
+app.use('/AdminHome', insert1);
+app.use('/AdminHome', insert2);
 
 
 //routes

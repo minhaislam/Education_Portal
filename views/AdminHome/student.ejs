@@ -23,9 +23,9 @@
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2>Admin <b>Details</b></h2></div>
+                    <div class="col-sm-8"><h2>Student <b>Details</b></h2></div>
                     <div class="col-sm-4">
-                        <button onclick="window.location.href = '/AdminHome/insert';" type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                        <button onclick="window.location.href = '/AdminHome/insert2';" type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
                     </div>
                     <div class="col-sm-4">
                         <button onclick="window.location.href = '/AdminHome/index';" type="button" class="btn btn-info add-new"><i class="fa fa-home"></i> Admin Home</button>
@@ -39,8 +39,8 @@
                 <thead>
                     <tr>
                     	 <th>ID</th>
-                        <th>Admin Name</th>
-                        <th>Admin ID</th>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
                         
                         <th>Password</th>
                          <th>Type</th>
@@ -49,7 +49,7 @@
                 </thead>
                 <tbody>
                 	<% for(var i=0; i < userlist.length; i++){
-                	  if(userlist[i].type=='admin'){ %>
+                     if(userlist[i].type=='student'){ %>
 		<tr>
             <td><%= userlist[i].id %></td>
 			<td><%= userlist[i].fullname %></td>
@@ -57,14 +57,13 @@
 			<td><%= userlist[i].password %></td>
 			<td><%= userlist[i].type %></td>
 			<td>
-
 				<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="/AdminHome/edit/<%= userlist[i].id %>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="/AdminHome/delete/<%= userlist[i].id %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            <a href="/AdminHome/edit2/<%= userlist[i].id %>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                            <a href="/AdminHome/delete2/<%= userlist[i].id %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
 			</td>
 		</tr>
-		<% }
-		} %>
+		<%}
+         } %>
                    
                 </tbody>
             </table>
