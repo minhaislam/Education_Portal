@@ -23,12 +23,12 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                      Name
+                                       <%= user.fullname%>
                                     </h5>
                                     <h6>
-                                        Web Developer and Designer
+                                         <%= user.type%>
                                     </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                    
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -66,7 +66,7 @@
                                                 <label>User Id</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
+                                                <p> <%= user.userid%></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -74,7 +74,7 @@
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                                <p> <%= user.fullname%></p>
                                             </div>
                                         </div>
                                         <div class="row">

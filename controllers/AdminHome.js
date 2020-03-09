@@ -21,6 +21,13 @@ router.get('/', function(req, res){
 		res.redirect('/logout');
 	}
 });
+router.get('/profile1', function(req, res){
+	//console.log('profile Page!');
+	//res.render('AdminHome/profile1');
+	userModel.getByUname(req.cookies['userid'], function(result){
+		res.render('AdminHome/profile1', {user: result});
+	});
+});
 
 router.get('/admin', function(req, res){
 	userModel.getAll(function(results){
@@ -50,13 +57,7 @@ router.get('/student', function(req, res){
 	});
 })
 
-router.get('/profile1/:id', function(req, res){
-	//console.log('profile Page!');
-	//res.render('AdminHome/profile1');
-	userModel.getById(req.params.id, function(result){
-		res.render('AdminHome/profile1', {user: result});
-	});
-});
+
 
 //admin:
 router.get('/edit/:id', function(req, res){
