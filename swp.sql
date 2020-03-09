@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2020 at 08:28 PM
+-- Generation Time: Mar 09, 2020 at 06:28 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -46,10 +46,11 @@ INSERT INTO `admin` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
 (5, 'Tahmid Mahtab ratul', 'A33980', '123456', 'admin'),
 (6, 'Faridee Nur', 'T34013', '123456', 'teacher'),
 (7, 'Tanjimul Hasan', 'S33430', '123456', 'student'),
-(8, 'Riaz', 'riaz', '123456', 'teacher'),
 (9, 'Maidul Islam', '1733333', '123456', 'student'),
 (11, 'Mahmud', '1734000', '123456', 'student'),
-(12, 'Ishtiak', 'A32032', '123456', 'admin');
+(12, 'Ishtiak', 'A32032', '123456', 'admin'),
+(13, 'Riaz Nur', 'T33039', '123456', 'teacher'),
+(24, 'Tahmid Mahtab Ratul', 'S14048', '123456', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +70,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

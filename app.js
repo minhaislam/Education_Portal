@@ -2,6 +2,7 @@
 var express 		= require('express');
 var bodyParser 		= require('body-parser');
 var ejs 			= require('ejs');
+var expressValidator =require('express-validator');
 var exSession 		= require('express-session');
 var cookieParser 	= require('cookie-parser');
 var login 			= require('./controllers/login');

@@ -1,42 +1,36 @@
 var express 	= require('express');
 var router 		= express.Router();
 var userModel	= require.main.require('./models/user-model');
+const { check, validationResult } = require('express-validator');
 
-router.get('/', function(req, res){
+
+router.get('/', [check('userid', 'UserID is required').isEmpty(),
+  check('password', 'Pssword is required').isEmpty()] ,
+  function(req, res){
+  	var errors = validationResult(req);
 	console.log('login page requested!');
-	res.render('login/index');
+	res.render('login/index',{error:errors.mapped()});
 });
 
-router.post('/', function(req, res){
+router.post('/',[
+  check('userid', 'UserID is required').not().isEmpty(),
+  check('password', 'Password is required').not().isEmpty()  ] ,
+   function(req, res){
 		
 		var user ={
 			userid: req.body.userid,
 			password: req.body.password
 		};
 
-		/*userModel.validate(user, function(status){
-			if(status){
-				if (user.type=='admin') {
-					res.cookie('username', req.body.uname);
-				res.redirect('/home');
-				}
-				else if (user.type=='member') {
-					res.cookie('username', req.body.uname);
-				res.redirect('/home1');
-				}
-			
-				else{
-					res.redirect('/login');
-				}
 
+var errors = validationResult(req);
 
-			}else{
-				res.redirect('/login');
-			}
-		});*/
-
-
-		userModel.validate(user, function(result){
+		if (!errors.isEmpty()) {
+			console.log(errors.mapped());
+    	res.render('login/index', {error:errors.mapped()});	
+		}
+		else{
+			userModel.validate(user, function(result){
 				console.log(result);
 				if (result[0].type=='admin') {
 					res.cookie('userid', req.body.userid);
@@ -53,6 +47,7 @@ router.post('/', function(req, res){
 
 
 		});
+		}
 });
 
 module.exports = router;
