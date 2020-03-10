@@ -19,42 +19,14 @@
       <nav class="navbar navbar-expand justify-content-between fixed-top">
         <a class="navbar-brand mb-0 h1 d-none d-md-block" href="index.html">
           <img src="./demo/img/logo.png" class="navbar-brand-image d-inline-block align-top mr-2" alt="">
-           <%= user.fullname%>(<%= user.type%>)
+           
         </a>
 
-        <form method="post" class="form-inline form-quicksearch d-none d-md-block mx-auto">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-icon">
-                <i data-feather="search"></i>
-              </div>
-            </div>
-            <input type="text" class="form-control" id="userid" placeholder="Type to search...">
-            <input type="submit" name="submit" value="Go">
-          </div>
+       
+         <button  onclick="window.location.href = '/AdminHome';" type="button" class="btn btn-primary">Go Home</button>
+         
 
-          <div id="searchresult"> </div>
-        </form>
-
-        <script type="text/javascript">
-      $(document).ready(function(){
-          
- $("#userid").keyup(function(){
-          var userid= $("#userid").val();
-
-          userModel.searchbyuserid(userid, function(result){
-    if(result[0]){
-      $("#searchresult").text($("#userid").val());
-    }else{
-      $("#searchresult").text("no id found");
-    }
-  });
-    
-  });
-
-});
-
-        </script>
+       
 
         <div class="d-flex flex-1 d-block d-md-none">
           <a href="#" class="sidebar-toggle ml-3">
@@ -141,6 +113,8 @@
                 <i data-feather="chevron-right" class="nav-collapse-icon"></i>
               </span>
             </a>
+           
+            
 
             <ul class="sidebar-sub-nav collapse" id="example">
               <li class="sidebar-nav-item">
@@ -215,17 +189,6 @@
                 </a>
               </li>
 
-                <li class="sidebar-nav-item">
-                <a href="AdminHome/analysis" class="sidebar-nav-link">
-                  <span class="sidebar-nav-abbr">
-                    An
-                  </span>
-                  <span class="sidebar-nav-name">
-                    Analytics
-                  </span>
-                </a>
-              </li>
-
               
             </ul>
           </li>
@@ -263,8 +226,68 @@
               <h1>Dashboard</h1>
             </div>
 
-        
+            <div class="row">
+        <% var a=0;
+            var s=0;
+            var t=0;
+            if(userlist.length>0){
+             for(var i=0; i < userlist.length; i++){
+                    if(userlist[i].type=='admin'){ 
+                          a=a+1;
+                        }
+                        if(userlist[i].type=='student'){ 
+                          s=s+1;
+                        }
+                        if(userlist[i].type=='teacher'){ 
+                          t=t+1;
+                        }
 
+                      }
+                    %>
+        
+              <div class="col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 bg-primary text-white text-center mb-grid w-100">
+                  <div class="d-flex flex-row align-items-center h-100">
+                    <div class="card-body">
+                      <div class="card-info-title">Total Students</div>
+                      <h3 class="card-title mb-0">
+                        <%= s %>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 bg-success text-white text-center mb-grid w-100">
+                  <div class="d-flex flex-row align-items-center h-100">
+                  
+                    <div class="card-body">
+                      <div class="card-info-title">Total Teachers</div>
+                      <h3 class="card-title mb-0">
+                        <%= t %>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-6 col-lg-3 d-flex">
+                <div class="card border-0 bg-success text-white text-center mb-grid w-100">
+                  <div class="d-flex flex-row align-items-center h-100">
+                  
+                    <div class="card-body">
+                      <div class="card-info-title">Total Admins</div>
+                      <h3 class="card-title mb-0">
+                        <%= a %>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<% } %>
       
     <!-- If you prefer jQuery these are the required scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

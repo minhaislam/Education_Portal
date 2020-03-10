@@ -38,6 +38,13 @@ router.get('/admin', function(req, res){
 		}
 	});
 })
+router.get('/analysis', function(req, res){
+	userModel.getAll(function(results){
+		if(results.length > 0){
+			res.render('AdminHome/analysis', {userlist: results});
+		}
+	});
+})
 router.get('/teacher', function(req, res){
 	userModel.getAll(function(results){
 		if(results.length > 0){
@@ -199,11 +206,29 @@ router.post('/delete2/:id', function(req, res){
 
 
 
+//search:
 
-//Insert:
+/*router.get('/', function(req, res){
+	
+	userModel.getByUname(req.params.userid, function(result){
+		res.render('AdminHome/profile2', {user: result});
+	});
+})*/
 
+/*router.post('/', function(req, res){
+			var user ={
+			userid: req.body.userid,
+		};
+	
+	userModel.getByUname(user, function(status){
 
-
+		if(status){
+			res.redirect('AdminHome/profile2');
+		}else{
+			res.redirect('AdminHome/profile2');
+		}
+	});
+})*/
 
 
 module.exports = router;
