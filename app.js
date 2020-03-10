@@ -2,16 +2,19 @@
 var express 		= require('express');
 var bodyParser 		= require('body-parser');
 var ejs 			= require('ejs');
-var expressValidator =require('express-validator');
 var exSession 		= require('express-session');
 var cookieParser 	= require('cookie-parser');
+//var multer  = require('multer');
 var login 			= require('./controllers/login');
 var logout 			= require('./controllers/logout');
-var AdminHome 		= require('./controllers/AdminHome');
-var insert 		= require('./controllers/insert');
-var insert1 		= require('./controllers/insert1');
-var insert2 		= require('./controllers/insert2');
+var home 			= require('./controllers/home');
+var course          = require('./controllers/course');
+var student          = require('./controllers/student');
+var teacher         = require('./controllers/teacher');
 
+
+ 
+//var app = express()
 
 var app = express();
 
@@ -20,17 +23,19 @@ app.set('view engine', 'ejs');
 
 
 //middleware
-app.use('/CSS', express.static('CSS'));
-app.use(bodyParser.json())
+
+app.use('/abc', express.static('css'));
+app.use('/abc', express.static('css'));
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(exSession({secret: 'my top secret value', saveUninitialized: true, resave: false}));
 app.use(cookieParser());
 app.use('/login', login);
 app.use('/logout', logout);
-app.use('/AdminHome', AdminHome);
-app.use('/AdminHome', insert);
-app.use('/AdminHome', insert1);
-app.use('/AdminHome', insert2);
+app.use('/home', home);
+app.use('/course', course);
+app.use('/student', student);
+app.use('/teacher', teacher);
 
 
 //routes

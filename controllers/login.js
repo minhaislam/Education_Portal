@@ -1,53 +1,27 @@
 var express 	= require('express');
 var router 		= express.Router();
 var userModel	= require.main.require('./models/user-model');
-const { check, validationResult } = require('express-validator');
 
-
-router.get('/', [check('userid', 'UserID is required').isEmpty(),
-  check('password', 'Pssword is required').isEmpty()] ,
-  function(req, res){
-  	var errors = validationResult(req);
+router.get('/', function(req, res){
 	console.log('login page requested!');
-	res.render('login/index',{error:errors.mapped()});
+	res.render('login/index');
 });
 
-router.post('/',[
-  check('userid', 'UserID is required').not().isEmpty(),
-  check('password', 'Password is required').not().isEmpty()  ] ,
-   function(req, res){
+router.post('/', function(req, res){
 		
 		var user ={
-			userid: req.body.userid,
+			username: req.body.uname,
 			password: req.body.password
 		};
 
-
-var errors = validationResult(req);
-
-		if (!errors.isEmpty()) {
-			console.log(errors.mapped());
-    	res.render('login/index', {error:errors.mapped()});	
-		}
-		else{
-			userModel.validate(user, function(result){
-				console.log(result);
-				if (result[0].type=='admin') {
-					res.cookie('userid', req.body.userid);
-				res.redirect('/AdminHome');
-				}
-				else if (result[0].type=='official') {
-					res.cookie('userid', req.body.userid);
-				res.redirect('/home1');
-				}
-			
-				else{
-					res.redirect('/login');
-				}
-
-
+		userModel.validate(user, function(status){
+			if(status){
+				res.cookie('username', req.body.uname);
+				res.redirect('/teacher');
+			}else{
+				res.redirect('/login');
+			}
 		});
-		}
 });
 
 module.exports = router;
