@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2020 at 06:28 PM
+-- Generation Time: Mar 10, 2020 at 11:01 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -25,10 +25,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `adminprofile`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `adminprofile` (
+  `id` int(5) NOT NULL,
+  `userid` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `profession` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `adminprofile`
+--
+
+INSERT INTO `adminprofile` (`id`, `userid`, `fullname`, `email`, `phone`, `profession`) VALUES
+(1, 'A34048', 'MD.Minhajul Islam', 'minhajislam95@gmail.com', 1797436723, 'Back end Developer'),
+(2, 'A34044', 'Habibul Amin', 'habib@gmail.com', 12345678, 'Developer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
   `id` int(5) NOT NULL,
   `fullname` varchar(255) NOT NULL,
   `userid` varchar(255) NOT NULL,
@@ -37,10 +60,10 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `admin` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
+INSERT INTO `users` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
 (1, 'MD.Minhajul Islam', 'A34048', '123456', 'admin'),
 (3, 'Habibul Amin', 'A34044', '123456', 'admin'),
 (5, 'Tahmid Mahtab ratul', 'A33980', '123456', 'admin'),
@@ -57,9 +80,15 @@ INSERT INTO `admin` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `adminprofile`
 --
-ALTER TABLE `admin`
+ALTER TABLE `adminprofile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -67,9 +96,15 @@ ALTER TABLE `admin`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `adminprofile`
 --
-ALTER TABLE `admin`
+ALTER TABLE `adminprofile`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 

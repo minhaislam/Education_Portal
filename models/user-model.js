@@ -22,6 +22,17 @@ module.exports ={
 			}
 		});
 	},
+	getByUid: function(userid, callback){
+		var sql = "select * from adminprofile where userid=?";
+		db.getResult(sql, [userid], function(result){
+			console.log(result)
+			if(result.length > 0){
+				callback(result[0]);
+			}else{
+				callback(null);
+			}
+		});
+	},
 	validate: function(user, callback){
 		var sql = "select * from users where userid=? and password=?";
 		db.getResult(sql, [user.userid, user.password], function(result){

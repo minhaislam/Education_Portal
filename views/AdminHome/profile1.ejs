@@ -26,36 +26,34 @@
                                        <%= user.fullname%>
                                     </h5>
                                     <h6>
-                                         <%= user.type%>
+                                        
                                     </h6>
                                     
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
-                                </li>
+                             
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <button  onclick="window.location.href = '/AdminHome';" type="button" class="btn btn-primary">Go Home</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            <p></p>
+                            <a href=""></a><br/>
+                            <a href=""></a><br/>
+                            <a href=""></a>
+                            <p></p>
+                            <a href=""></a><br/>
+                            <a href=""></a><br/>
+                            <a href=""></a><br/>
+                            <a href=""></a><br/>
+                            <a href=""></a><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -82,7 +80,7 @@
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p><%= user.email%></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -90,7 +88,7 @@
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                                <p><%= user.phone%></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -98,7 +96,7 @@
                                                 <label>Profession</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
+                                                <p><%= user.profession%></p>
                                             </div>
                                         </div>
                             </div>

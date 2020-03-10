@@ -24,7 +24,7 @@ router.get('/', function(req, res){
 router.get('/profile1', function(req, res){
 	//console.log('profile Page!');
 	//res.render('AdminHome/profile1');
-	userModel.getByUname(req.cookies['userid'], function(result){
+	userModel.getByUid(req.cookies['userid'], function(result){
 		res.render('AdminHome/profile1', {user: result});
 	});
 });
