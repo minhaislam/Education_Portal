@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2020 at 11:01 PM
+-- Generation Time: Mar 12, 2020 at 01:38 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -48,6 +48,52 @@ INSERT INTO `adminprofile` (`id`, `userid`, `fullname`, `email`, `phone`, `profe
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `studentprofile`
+--
+
+CREATE TABLE `studentprofile` (
+  `id` int(5) NOT NULL,
+  `userid` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `CGPA` varchar(255) NOT NULL,
+  `passingyear` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `studentprofile`
+--
+
+INSERT INTO `studentprofile` (`id`, `userid`, `fullname`, `department`, `CGPA`, `passingyear`) VALUES
+(1, 'S33430', 'Tanjimul Hasan', 'C.S.E', '3.85', '2021'),
+(2, 'S14048', 'Tahmid Mahtab Ratul', 'C.S.E', '3.70', '2021');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacherprofile`
+--
+
+CREATE TABLE `teacherprofile` (
+  `id` int(5) NOT NULL,
+  `userid` varchar(255) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `education` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `teacherprofile`
+--
+
+INSERT INTO `teacherprofile` (`id`, `userid`, `fullname`, `department`, `email`, `education`) VALUES
+(1, 'T34013', 'Faridee Nur', 'C.S.E.', 'amicableifti@gmail.com', 'M.S.C in CSE'),
+(2, 'T33039', 'Riaz Nur', 'E.E.E', 'riaz@gmail.com', 'Msc EEE');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -64,16 +110,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
-(1, 'MD.Minhajul Islam', 'A34048', '123456', 'admin'),
+(1, 'MD.Minhajul Islam', 'A34048', '123123', 'admin'),
 (3, 'Habibul Amin', 'A34044', '123456', 'admin'),
 (5, 'Tahmid Mahtab ratul', 'A33980', '123456', 'admin'),
 (6, 'Faridee Nur', 'T34013', '123456', 'teacher'),
 (7, 'Tanjimul Hasan', 'S33430', '123456', 'student'),
-(9, 'Maidul Islam', '1733333', '123456', 'student'),
-(11, 'Mahmud', '1734000', '123456', 'student'),
-(12, 'Ishtiak', 'A32032', '123456', 'admin'),
+(12, 'Ishtiak Ahmed', 'A32032', '123456', 'admin'),
 (13, 'Riaz Nur', 'T33039', '123456', 'teacher'),
-(24, 'Tahmid Mahtab Ratul', 'S14048', '123456', 'admin');
+(24, 'Tahmid Mahtab Ratul', 'S14048', '123456', 'student');
 
 --
 -- Indexes for dumped tables
@@ -83,6 +127,18 @@ INSERT INTO `users` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
 -- Indexes for table `adminprofile`
 --
 ALTER TABLE `adminprofile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `studentprofile`
+--
+ALTER TABLE `studentprofile`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `teacherprofile`
+--
+ALTER TABLE `teacherprofile`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -99,6 +155,18 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `adminprofile`
 --
 ALTER TABLE `adminprofile`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `studentprofile`
+--
+ALTER TABLE `studentprofile`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `teacherprofile`
+--
+ALTER TABLE `teacherprofile`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --

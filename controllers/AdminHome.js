@@ -29,6 +29,31 @@ router.get('/profile1', function(req, res){
 	});
 });
 
+router.get('/changepass', function(req, res){
+	//console.log('profile Page!');
+	//res.render('AdminHome/profile1');
+	userModel.getByUid(req.cookies['userid'], function(result){
+		res.render('AdminHome/changepass', {user: result});
+	});
+});
+
+router.post('/changepass', function(req, res){
+	
+	var user = {
+		password: req.body.password,
+		id: req.body.id
+	};
+
+	userModel.changepass(user, function(status){
+		if(status){
+			res.redirect('/logout');
+		}else{
+			res.redirect('/AdminHome/changepass');
+		}
+	});
+})
+
+
 router.get('/admin', function(req, res){
 	userModel.getAll(function(results){
 		if(results.length > 0){
@@ -201,6 +226,20 @@ router.post('/delete2/:id', function(req, res){
 		}else{
 			res.redirect('/AdminHome/delete2/'+req.params.id);
 		}
+	});
+})
+//adminprofile:
+router.get('/teacherprofile/:userid', function(req, res){
+	
+	userModel.getByAId(req.params.userid, function(result){
+		res.render('AdminHome/teacherprofile', {user: result});
+	});
+})
+
+router.get('/studentprofile/:userid', function(req, res){
+	
+	userModel.getBySId(req.params.userid, function(result){
+		res.render('AdminHome/studentprofile', {user: result});
 	});
 })
 

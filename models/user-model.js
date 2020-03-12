@@ -11,6 +11,26 @@ module.exports ={
 			}
 		});
 	},
+	getByAId: function(userid, callback){
+		var sql = "select * from teacherprofile where userid=?";
+		db.getResult(sql, [userid], function(result){
+			if(result.length > 0){
+				callback(result[0]);
+			}else{
+				callback(null);
+			}
+		});
+	},
+	getBySId: function(userid, callback){
+		var sql = "select * from studentprofile where userid=?";
+		db.getResult(sql, [userid], function(result){
+			if(result.length > 0){
+				callback(result[0]);
+			}else{
+				callback(null);
+			}
+		});
+	},
 	getByUname: function(userid, callback){
 		var sql = "select * from users where userid=?";
 		db.getResult(sql, [userid], function(result){
@@ -90,6 +110,16 @@ module.exports ={
 	update: function(user, callback){
 		var sql = "update users set fullname=?,userid=?, password=?, type=? where id=?";
 		db.execute(sql, [user.fullname,user.userid, user.password, user.type, user.id], function(status){
+			if(status){
+				callback(true);
+			}else{
+				callback(false);
+			}
+		});
+	},
+	changepass: function(user, callback){
+		var sql = "update users set password=? where id=?";
+		db.execute(sql, [user.password,user.id], function(status){
 			if(status){
 				callback(true);
 			}else{
