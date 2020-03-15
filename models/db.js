@@ -6,7 +6,7 @@ var getConnection = function(callback){
 	  host     : 'localhost',
 	  user     : 'root',
 	  password : '',
-	  database : 'swp'
+	  database : 'portal'
 	});
 	
 	connection.connect(function(err) {
