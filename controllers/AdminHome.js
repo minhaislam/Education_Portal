@@ -2,6 +2,7 @@ var express 	= require('express');
 var router 		= express.Router();
 var userModel   = require.main.require('./models/user-model');
 
+
 router.get('*', function(req, res, next){
 	if(req.cookies['userid'] == null){
 		res.redirect('/login');
@@ -22,6 +23,7 @@ router.get('/', function(req, res){
 	}
 });
 router.get('/profile1', function(req, res){
+
 	//console.log('profile Page!');
 	//res.render('AdminHome/profile1');
 	userModel.getByUid(req.cookies['userid'], function(result){
