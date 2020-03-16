@@ -23,7 +23,7 @@ router.post('/insert2',[check('fullname', 'Full Name is required').not().isEmpty
 			fullname: req.body.fullname,
 			userid: req.body.userid,
 			password: req.body.password,
-			type: req.body.type
+			type: req.body.type.toLowerCase()
 		};
 		//console.log(user.fullname);
 		var errors = validationResult(req);
@@ -33,7 +33,8 @@ router.post('/insert2',[check('fullname', 'Full Name is required').not().isEmpty
 					
 			}
 			else{
-				userModel.insert(user, function(status){
+				if (user.type=='student') {
+					userModel.insert(user, function(status){
 			if(status){
 				console.log('successful');
 				res.redirect('/AdminHome/student');
@@ -42,6 +43,12 @@ router.post('/insert2',[check('fullname', 'Full Name is required').not().isEmpty
 				res.redirect('/AdminHome/student');
 			}
 		});
+				}
+				else{
+					console.log('student required');
+					res.redirect('/AdminHome/insert2');
+				}
+				
 					
 			}
 })

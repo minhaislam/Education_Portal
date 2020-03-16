@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2020 at 01:38 AM
+-- Generation Time: Mar 16, 2020 at 10:52 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -110,14 +110,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
-(1, 'MD.Minhajul Islam', 'A34048', '123123', 'admin'),
 (3, 'Habibul Amin', 'A34044', '123456', 'admin'),
 (5, 'Tahmid Mahtab ratul', 'A33980', '123456', 'admin'),
 (6, 'Faridee Nur', 'T34013', '123456', 'teacher'),
 (7, 'Tanjimul Hasan', 'S33430', '123456', 'student'),
-(12, 'Ishtiak Ahmed', 'A32032', '123456', 'admin'),
 (13, 'Riaz Nur', 'T33039', '123456', 'teacher'),
-(24, 'Tahmid Mahtab Ratul', 'S14048', '123456', 'student');
+(24, 'Tahmid Mahtab Ratul', 'S14048', '123456', 'student'),
+(27, 'Riaz Nur', 'S00019', '123456', 'student'),
+(28, 'Syed Sanjid', 'T31301', '123456', 'teacher'),
+(29, 'Ishtiak Ahmed', 'A13001', '123456', 'admin'),
+(30, 'MD.Minhajul Islam', 'A34048', '123123', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -173,7 +175,7 @@ ALTER TABLE `teacherprofile`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
