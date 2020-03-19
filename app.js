@@ -11,6 +11,10 @@ var AdminHome 		= require('./controllers/AdminHome');
 var insert 		= require('./controllers/insert');
 var insert1 		= require('./controllers/insert1');
 var insert2 		= require('./controllers/insert2');
+var course          = require('./controllers/course');
+var student          = require('./controllers/student');
+var teacher         = require('./controllers/teacher');
+var logina 			= require('./controllers/logina');
 
 
 var app = express();
@@ -21,6 +25,7 @@ app.set('view engine', 'ejs');
 
 //middleware
 app.use('/CSS', express.static('CSS'));
+app.use('/abc', express.static('csss'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(exSession({secret: 'my top secret value', saveUninitialized: true, resave: false}));
@@ -31,7 +36,10 @@ app.use('/AdminHome', AdminHome);
 app.use('/AdminHome', insert);
 app.use('/AdminHome', insert1);
 app.use('/AdminHome', insert2);
-
+app.use('/course', course);
+app.use('/student', student);
+app.use('/teacher', teacher);
+app.use('/logina', logina);
 
 //routes
 app.get('/', function(req, res){

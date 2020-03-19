@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>E portal </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y="
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css"
+      integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="abc/csss/style.css" />
+  </head>
+
+  <body>
+
+    <div class="row">
+              <div class="col-md-4">
+                <a href="../../student/viewallstudent" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
+                <div class="card">
+                   <div class="card-header">
+                   Students from 
+                       </div>
+                        <div class="card-body">
+                          <h5 class="card-title">All Students</h5>
+
+  <form method="post">
+    <div class="form-group">
+    <label for="exampleFormControlInput1">ID</label>
+   <input type="text" class="form-control" name="id" readonly value="<%=user.id%>" placeholder="">
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlInput1">Email Title</label>
+   <input type="text" class="form-control" required="required" name="ntitle" value="" placeholder="Email title">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" readonly value="<%=user.email%>"id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" required="required"  name="notice" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+    <button type="update" class="btn btn-primary">Submit</button>
+</form>
+
+                  
+                        </div>
+                  </div>
+              </div>
+
+                          <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header">
+                 Courses
+                 </div>
+                    <div class="card-body">
+                     <h5 class="card-title">Last message</h5>
+                       <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+       <th scope="col">Name</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">C.Title </th>
+      <th scope="col">Message</th>
+      <th scope="col">Upload</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= user.id %></td>
+     <td><%= user.name %></td>
+      <td><%= user.cname %></td>
+      <td><%= user.ntitle %></td>
+       <td><%= user.notice %></td>
+      <td><a href="../../student/viewallstudent" aria-pressed="true">View</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+            
+        </main>
+      </div>
+    </div>
+
+
+
+
+            </div>
+
+
+
+    <!------------------------------------------------------------->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+      integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"
+      integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./abc/js/script.js"></script>
+  </body>
+</html>
