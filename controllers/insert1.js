@@ -1,6 +1,6 @@
 var express 	= require('express');
 var router 		= express.Router();
-var userModel	= require.main.require('./models/user-model');
+var userModel	= require.main.require('./models/user-modelA');
 const { check, validationResult } = require('express-validator');
 
 router.get('/insert1',[check('fullname', 'Full Name is required').isEmpty(),

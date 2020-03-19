@@ -5,6 +5,7 @@ var ejs 			= require('ejs');
 var expressValidator =require('express-validator');
 var exSession 		= require('express-session');
 var cookieParser 	= require('cookie-parser');
+var logina 			= require('./controllers/logina');
 var login 			= require('./controllers/login');
 var logout 			= require('./controllers/logout');
 var AdminHome 		= require('./controllers/AdminHome');
@@ -14,7 +15,7 @@ var insert2 		= require('./controllers/insert2');
 var course          = require('./controllers/course');
 var student          = require('./controllers/student');
 var teacher         = require('./controllers/teacher');
-var logina 			= require('./controllers/logina');
+
 
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(exSession({secret: 'my top secret value', saveUninitialized: true, resave: false}));
 app.use(cookieParser());
 app.use('/login', login);
+app.use('/logina', logina);
 app.use('/logout', logout);
 app.use('/AdminHome', AdminHome);
 app.use('/AdminHome', insert);
@@ -39,7 +41,7 @@ app.use('/AdminHome', insert2);
 app.use('/course', course);
 app.use('/student', student);
 app.use('/teacher', teacher);
-app.use('/logina', logina);
+
 
 //routes
 app.get('/', function(req, res){

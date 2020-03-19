@@ -1,11 +1,11 @@
 var express 	= require('express');
 var router 		= express.Router();
-var userModel   = require.main.require('./models/user-model');
+var userModel   = require.main.require('./models/user-modelA');
 
 
 router.get('*', function(req, res, next){
 	if(req.cookies['userid'] == null){
-		res.redirect('/login');
+		res.redirect('/logina');
 	}else{
 		next();
 	}

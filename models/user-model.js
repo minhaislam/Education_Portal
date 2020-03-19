@@ -86,7 +86,7 @@ module.exports ={
 		});
 	},
 	insertadmin: function(user, callback){
-		console.log(user);
+		
 		var sql = "insert into users values(?,?,?,?,?)";
 
 		db.execute(sql, [null,user.fullname,user.userid, user.password, user.type], function(status){

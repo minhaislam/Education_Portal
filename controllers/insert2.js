@@ -1,6 +1,6 @@
 var express 	= require('express');
 var router 		= express.Router();
-var userModel	= require.main.require('./models/user-model');
+var userModel	= require.main.require('./models/user-modelA');
 const { check, validationResult } = require('express-validator');
 
 router.get('/insert2',[check('fullname', 'Full Name is required').isEmpty(),
@@ -28,7 +28,7 @@ router.post('/insert2',[check('fullname', 'Full Name is required').not().isEmpty
 		//console.log(user.fullname);
 		var errors = validationResult(req);
 		if (!errors.isEmpty()) {
-				console.log(errors.mapped());
+				//console.log(errors.mapped());
     	res.render('AdminHome/insert2', {error:errors.mapped()});
 					
 			}
