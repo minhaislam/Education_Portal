@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2020 at 03:21 PM
+-- Generation Time: Mar 20, 2020 at 03:04 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -208,16 +208,15 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullname`, `userid`, `password`, `type`) VALUES
-(3, 'Habibul Amin', 'A34044', '123456', 'admin'),
+(3, 'Habibul Amin Rahi', 'A34044', '123456', 'admin'),
 (5, 'Tahmid Mahtab ratul', 'A33980', '123456', 'admin'),
-(6, 'Faridee Nur', 'T34013', '123456', 'teacher'),
-(7, 'Tanjimul Hasan T', 'S33430', '123456', 'student'),
+(6, 'Faridee Nur Ifti', 'T34013', '123456', 'teacher'),
+(7, 'Tanjimul Hasan Shopnil', 'S33430', '123456', 'student'),
 (13, 'Riaz Nur', 'T33039', '123456', 'teacher'),
 (24, 'Tahmid Mahtab Ratul', 'S14048', '123456', 'student'),
-(27, 'Riaz Nur', 'S00019', '123456', 'student'),
 (28, 'Syed Sanjid', 'T31301', '123456', 'teacher'),
-(29, 'Ishtiak Ahmed', 'A13001', '123456', 'admin'),
-(30, 'MD.Minhajul Islam', 'A34048', '123123', 'admin');
+(29, 'MD.Minhaj Islam', 'A34048', '123123', 'admin'),
+(30, 'Tridiv Ahmed', 'S24048', '123456', 'student');
 
 --
 -- Indexes for dumped tables
